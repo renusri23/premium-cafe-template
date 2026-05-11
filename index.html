@@ -2,10 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>restaurant-template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>velvet café</title>
   </head>
+  <style>
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Better touch targets on mobile */
+  @media (max-width: 768px) {
+    button, 
+    .mobile-menu-btn,
+    [onclick] {
+      cursor: pointer;
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+</style>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

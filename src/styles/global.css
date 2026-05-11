@@ -26,6 +26,137 @@ h1, h2, h3, .logo {
   padding: 0 2rem;
 }
 
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 10, 10, 0.86);
+  border-bottom: 1px solid rgba(198, 164, 63, 0.1);
+  backdrop-filter: blur(16px);
+  transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(10, 10, 10, 0.97);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 72px;
+}
+
+.logo {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: #F7F5F0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  letter-spacing: -0.04em;
+}
+
+.logo span {
+  color: #C6A43F;
+}
+
+.desktop-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: #F7F5F0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: #C6A43F;
+  transform: translateY(-1px);
+}
+
+.desktop-action {
+  display: flex;
+}
+
+.mobile-menu-btn {
+  display: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0.35rem;
+}
+
+.mobile-menu-btn span {
+  width: 24px;
+  height: 2px;
+  background: #F7F5F0;
+  display: block;
+  border-radius: 999px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-menu-btn.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.96);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  z-index: 150;
+}
+
+.mobile-menu {
+  width: min(100%, 420px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(198, 164, 63, 0.18);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.mobile-link {
+  font-size: 1.2rem;
+  padding: 1rem 0;
+}
+
+.mobile-action {
+  width: 100%;
+}
+
 section {
   padding: 6rem 0;
 }
@@ -41,18 +172,11 @@ section {
 
 /* Navbar responsive */
 @media (max-width: 768px) {
-  nav {
-    padding: 1rem 1.5rem !important;
-  }
   .desktop-menu {
     display: none !important;
   }
   .mobile-menu-btn {
     display: flex !important;
-  }
-  .logo {
-    flex: 1;
-    text-align: center;
   }
 }
 
@@ -150,4 +274,60 @@ button {
 img {
   max-width: 100%;
   height: auto;
+}
+/* Mobile Styles - ADD THIS AT THE END OF YOUR global.css */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none !important;
+  }
+  
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+  
+  .container {
+    padding: 0 1.2rem !important;
+  }
+  
+  section {
+    padding: 3rem 0 !important;
+  }
+  
+  h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  h2 {
+    font-size: 2rem !important;
+  }
+  
+  .hero-content {
+    text-align: center !important;
+  }
+  
+  .hero-buttons {
+    justify-content: center !important;
+  }
+  
+  .sticky-cta {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 0.8rem 1rem !important;
+  }
+  
+  .sticky-cta .info {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    text-align: center !important;
+  }
+  
+  .reveal {
+    text-align: center !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu-btn {
+    display: none !important;
+  }
 }
