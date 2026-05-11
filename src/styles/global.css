@@ -41,11 +41,18 @@ section {
 
 /* Navbar responsive */
 @media (max-width: 768px) {
+  nav {
+    padding: 1rem 1.5rem !important;
+  }
   .desktop-menu {
     display: none !important;
   }
   .mobile-menu-btn {
     display: flex !important;
+  }
+  .logo {
+    flex: 1;
+    text-align: center;
   }
 }
 

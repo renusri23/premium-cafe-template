@@ -84,7 +84,6 @@ const Navbar = () => {
         className="mobile-menu-btn"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         style={{
-          display: "none",
           flexDirection: "column",
           gap: "6px",
           cursor: "pointer",
